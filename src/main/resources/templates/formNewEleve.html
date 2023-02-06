@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+  <title>Employee Web Application</title>
+
+  <style>
+    body {
+      padding-top: 50px;
+    }
+
+    .special {
+      padding-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href=".">Système de gestion des
+        eleves</a>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container special">
+
+  <h2 class="h2">Ajout d'un nouvel eleve</h2>
+  <div>
+    <form method="post"
+          th:action="@{/saveEleve}" th:object="${eleve}">
+      <div class="form-group">
+        <label for="firstNameInput">Prénom</label>
+        <input
+                type="text" th:field="*{eleve.setPrenom()}" class="form-control" id="firstNameInput"
+                aria-describedby="firstNameHelp" placeholder="Saisir le prénom"> <small
+              id="firstNameHelp" class="form-text text-muted">Merci d'écrire le prénom de l'eleve.</small>
+      </div>
+
+
+      <div class="form-group">
+        <label for="lastNameInput">nom</label>
+        <input
+                type="text" th:field="*{eleve.nom}" class="form-control" id="lastNameInput"
+        aria-describedby="lastNameHelp" placeholder="Saisir le nom"> <small
+              id="lastNameHelp" class="form-text text-muted">Merci d'écrire le nom de l'eleve.</small>
+      </div>
+
+
+      <div class="form-group">
+        <label for="adresseInput">adresse</label>
+        <input
+                type="text" th:field="*{eleve.adresse}" class="form-control" id="adresseInput"
+                aria-describedby="mailHelp" placeholder="Saisir l'adresse email"> <small
+              id="adresseHelp" class="form-text text-muted">Merci d'écrire le prénom de l'eleve.</small>
+      </div>
+
+
+      <div class="form-group">
+        <label for="naissanceInput">date de naissance</label>
+        <input
+                type="text" th:field="*{eleve.dateNaissance}" class="form-control" id="naissanceInput"
+                aria-describedby="mailHelp" placeholder="Saisir l'adresse email"> <small
+              id="naissanceHelp" class="form-text text-muted">Merci d'écrire le prénom de l'eleve.</small>
+      </div>
+
+
+      <div class="form-group">
+        <label for="MailInput">MAIL</label>
+        <input
+                type="text" th:field="*{eleve.mail}" class="form-control" id="MailInput"
+                aria-describedby="mailHelp" placeholder="Saisir l'adresse email"> <small
+              id="MailHelp" class="form-text text-muted">Merci d'écrire le prénom de l'eleve.</small>
+      </div>
+
+
+      <div class="form-group">
+        <label for="speInput">spé</label>
+        <input
+                type="text" th:field="*{eleve.specialite}" class="form-control" id="speInput"
+                aria-describedby="mailHelp" placeholder="Saisir l'adresse email"> <small
+              id="speHelp" class="form-text text-muted">Merci d'écrire le prénom de l'eleve.</small>
+      </div>
+
+
+      <div class="form-group">
+        <label for="numInput">num tel</label>
+        <input
+                type="text" th:field="*{eleve.numerotel}" class="form-control" id="numInput"
+                aria-describedby="mailHelp" placeholder="Saisir l'adresse email"> <small
+              id="numHelp" class="form-text text-muted">Merci d'écrire le prénom de l'eleve.</small>
+      </div>
+
+
+      <div class="form-group">
+        <label for="diplomeInput">diplome</label>w
+        <input
+                type="text" th:field="*{eleve.diplome}" class="form-control" id="diplomeInput"
+                aria-describedby="mailHelp" placeholder="Saisir l'adresse email"> <small
+              id="diplomeHelp" class="form-text text-muted">Merci d'écrire le prénom de l'eleve.</small>
+      </div>
+
+
+      <div class="form-group">
+        <label for="accesInput">diplome</label>
+        <input
+                type="text" th:field="*{eleve.acces}" class="form-control" id="accesInput"
+                aria-describedby="mailHelp" placeholder="Saisir l'adresse email"> <small
+              id="accesHelp" class="form-text text-muted">Merci d'écrire le prénom de l'eleve.</small>
+      </div>
+
+
+
+
+      <button type="submit" class="btn btn-primary">Créer</button>
+    </form>
+  </div>
+
+</div>
+
+<script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>
