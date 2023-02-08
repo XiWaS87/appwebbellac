@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -9,110 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" media="all" href="templates/css/style.css" th:href="@{/templates/css/style.css}" />
 
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            font-size: 62.5%;
-        }
-
-        body {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: 1.6rem;
-            line-height: 1.6;
-            color: #555555;
-            margin: 0;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-            color: #000;
-            line-height: 1;
-        }
-
-        h1, .h1 {
-            font-size: 3.1rem;
-        }
-
-        h2, .h2 {
-            font-size: 2.8rem;
-        }
-
-        h3, .h3 {
-            font-size: 2.1rem;
-        }
-
-        img {
-            max-width: 30%;
-            height: auto;
-        }
-
-        .container {
-            padding: 1rem 2rem;
-        }
-
-        .d-flex {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .header {
-            background-color: rgb(170, 170, 170);
-            border-bottom: 1px solid rgb(0, 0, 0);
-        }
-
-        .header .logo {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2rem;
-            letter-spacing: 2px;
-            width: 33%;
-        }
-
-        .list-unstyled {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .navbar {
-            width: 25%;
-        }
-
-        .header li {
-            display: inline;
-            align-items: center;
-            padding: 0 5px;
-        }
-
-        .hero {
-            background: #5b6c78;
-            color: #fff;
-            padding: 1rem 0 0 0;
-        }
-
-        .hero .title {
-            color: inherit;
-            font-size: 4rem;
-            margin: 1.6rem 0 0 0;
-        }
-
-        .hero__item {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero__avatar {
-            width: 33%;
-        }
-    </style>
 
 </head>
 
@@ -120,7 +18,7 @@
 <header class="header">
     <div class="container d-flex">
         <div class="hero__avatar">
-            <img widht="560" height="453" src="templates/LOGOLYCEE2022.png" alt="">
+            <img th:src="@{/templates/images/logolycee2022.png}" alt="oui"/>
         </div>
         <div class="logo">
             Lycée Professionnel Martin Nadaud

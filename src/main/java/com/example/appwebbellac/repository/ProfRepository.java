@@ -22,7 +22,7 @@ public class ProfRepository {
     public Iterable<Professeur> getProf() {
         System.out.println(props.getApiUrl());
         String baseApiUrl = props.getApiUrl();
-        String getProfUrl = baseApiUrl + "/prof";
+        String getProfUrl = baseApiUrl + "/profs";
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Iterable<Professeur>> response = restTemplate.exchange(
