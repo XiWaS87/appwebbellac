@@ -18,22 +18,12 @@ import org.springframework.web.servlet.ModelAndView;
 public class eleveController {
 
     @Autowired
-    private EleveRepository repositoryEleve;
-
-    @Autowired
     private EleveService service;
-
-
-
-    @GetMapping("/")
-    public String home() {
-        return "home";
-    }
 
 
     @GetMapping("/eleves")
     public String eleve(Model model) {
-        Iterable<Eleve> listEleve = repositoryEleve.getEleve();
+        Iterable<Eleve> listEleve = service.getEleve();
         model.addAttribute("eleves", listEleve);
         return "eleve";
     }
@@ -47,14 +37,14 @@ public class eleveController {
 
     @GetMapping("/updateEleve/{id}")
     public String updateEleve(@PathVariable("id") final int id, Model model) {
-        Eleve e = repositoryEleve.getEleve(id);
+        Eleve e = service.getEleve(id);
         model.addAttribute("eleve", e);
         return "formUpdateEleve";
     }
 
     @GetMapping("/deleteEleve/{id}")
     public ModelAndView deleteEmployee(@PathVariable("id") final int id) {
-        repositoryEleve.deleteEleve(id);
+        service.getEleve(id);
         return new ModelAndView("redirect:/");
     }
 

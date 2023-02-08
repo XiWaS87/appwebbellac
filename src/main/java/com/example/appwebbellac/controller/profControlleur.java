@@ -22,17 +22,16 @@ import org.springframework.web.servlet.ModelAndView;
 public class profControlleur {
 
     @Autowired
-    private ProfRepository profRepository;
-
-    @Autowired
     private ProfService service;
 
-
-
+    @GetMapping("/")
+    public String home() {
+        return "home";
+    }
 
     @GetMapping("/profs")
     public String prof(Model model) {
-        Iterable<Professeur> listProf = profRepository.getProf();
+        Iterable<Professeur> listProf = service.getProf();
         model.addAttribute("profs", listProf);
         return "prof";
     }
@@ -46,14 +45,14 @@ public class profControlleur {
 
     @GetMapping("/updateProf/{id}")
     public String updateProf(@PathVariable("id") final int id, Model model) {
-        Professeur p = profRepository.getProf(id);
+        Professeur p = service.getProf(id);
         model.addAttribute("eleve", p);
         return "formUpdateProf";
     }
 
     @GetMapping("/deleteProf/{id}")
     public ModelAndView deleteProf(@PathVariable("id") final int id) {
-        profRepository.deleteProf(id);
+        service.deleteProf(id);
         return new ModelAndView("redirect:/");
     }
 

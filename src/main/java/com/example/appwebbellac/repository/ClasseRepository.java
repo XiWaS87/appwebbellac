@@ -24,7 +24,7 @@ public class ClasseRepository {
     public Iterable<Classe> getClasse() {
 
         String baseApiUrl = props.getApiUrl();
-        String getClasseUrl = baseApiUrl + "/classes";
+        String getClasseUrl = baseApiUrl + "/classe";
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Iterable<Classe>> response = restTemplate.exchange(

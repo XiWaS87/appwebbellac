@@ -63,7 +63,7 @@ public class EleveRepository {
      */
     public Eleve createEleve(Eleve e) {
         String baseApiUrl = props.getApiUrl();
-        String createEleveUrl = baseApiUrl + "/eleves";
+        String createEleveUrl = baseApiUrl + "/eleve";
 
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<Eleve> request = new HttpEntity<Eleve>(e);

@@ -48,7 +48,7 @@
       <div class="form-group">
         <label for="firstNameInput">Prénom</label>
         <input
-                type="text" th:field="*{eleve.setPrenom()}" class="form-control" id="firstNameInput"
+                type="text" th:field="*{prenom}" class="form-control" id="firstNameInput"
                 aria-describedby="firstNameHelp" placeholder="Saisir le prénom"> <small
               id="firstNameHelp" class="form-text text-muted">Merci d'écrire le prénom de l'eleve.</small>
       </div>
@@ -57,7 +57,7 @@
       <div class="form-group">
         <label for="lastNameInput">nom</label>
         <input
-                type="text" th:field="*{eleve.nom}" class="form-control" id="lastNameInput"
+                type="text" th:field="*{nom}" class="form-control" id="lastNameInput"
         aria-describedby="lastNameHelp" placeholder="Saisir le nom"> <small
               id="lastNameHelp" class="form-text text-muted">Merci d'écrire le nom de l'eleve.</small>
       </div>
@@ -66,7 +66,7 @@
       <div class="form-group">
         <label for="adresseInput">adresse</label>
         <input
-                type="text" th:field="*{eleve.adresse}" class="form-control" id="adresseInput"
+                type="text" th:field="*{adresse}" class="form-control" id="adresseInput"
                 aria-describedby="mailHelp" placeholder="Saisir l'adresse email"> <small
               id="adresseHelp" class="form-text text-muted">Merci d'écrire le prénom de l'eleve.</small>
       </div>
@@ -75,7 +75,7 @@
       <div class="form-group">
         <label for="naissanceInput">date de naissance</label>
         <input
-                type="text" th:field="*{eleve.dateNaissance}" class="form-control" id="naissanceInput"
+                type="date" th:field="*{dateNaissance}" class="form-control" id="naissanceInput"
                 aria-describedby="mailHelp" placeholder="Saisir l'adresse email"> <small
               id="naissanceHelp" class="form-text text-muted">Merci d'écrire le prénom de l'eleve.</small>
       </div>
@@ -84,7 +84,7 @@
       <div class="form-group">
         <label for="MailInput">MAIL</label>
         <input
-                type="text" th:field="*{eleve.mail}" class="form-control" id="MailInput"
+                type="text" th:field="*{mail}" class="form-control" id="MailInput"
                 aria-describedby="mailHelp" placeholder="Saisir l'adresse email"> <small
               id="MailHelp" class="form-text text-muted">Merci d'écrire le prénom de l'eleve.</small>
       </div>
@@ -93,7 +93,7 @@
       <div class="form-group">
         <label for="speInput">spé</label>
         <input
-                type="text" th:field="*{eleve.specialite}" class="form-control" id="speInput"
+                type="text" th:field="*{specialite}" class="form-control" id="speInput"
                 aria-describedby="mailHelp" placeholder="Saisir l'adresse email"> <small
               id="speHelp" class="form-text text-muted">Merci d'écrire le prénom de l'eleve.</small>
       </div>
@@ -102,28 +102,50 @@
       <div class="form-group">
         <label for="numInput">num tel</label>
         <input
-                type="text" th:field="*{eleve.numerotel}" class="form-control" id="numInput"
+                type="text" th:field="*{numerotel}" class="form-control" id="numInput"
                 aria-describedby="mailHelp" placeholder="Saisir l'adresse email"> <small
               id="numHelp" class="form-text text-muted">Merci d'écrire le prénom de l'eleve.</small>
       </div>
 
 
       <div class="form-group">
-        <label for="diplomeInput">diplome</label>w
+        <label for="habil_travail_machineInput">habilitation travail machine</label>
         <input
-                type="text" th:field="*{eleve.diplome}" class="form-control" id="diplomeInput"
+                type="text" th:field="*{habil_travail_machine}" class="form-control" id="habil_travail_machineInput"
                 aria-describedby="mailHelp" placeholder="Saisir l'adresse email"> <small
-              id="diplomeHelp" class="form-text text-muted">Merci d'écrire le prénom de l'eleve.</small>
+              id="habil_travail_machineHelp" class="form-text text-muted">Merci d'écrire le prénom de l'eleve.</small>
       </div>
 
 
       <div class="form-group">
-        <label for="accesInput">diplome</label>
+        <label for="habil_travail_proximite_reseauInput">habilitation travail machine</label>
         <input
-                type="text" th:field="*{eleve.acces}" class="form-control" id="accesInput"
+                type="text" th:field="*{habil_travail_proximite_reseau}" class="form-control" id="habil_travail_proximite_reseauInput"
                 aria-describedby="mailHelp" placeholder="Saisir l'adresse email"> <small
-              id="accesHelp" class="form-text text-muted">Merci d'écrire le prénom de l'eleve.</small>
+              id="habil_travail_proximite_reseauHelp" class="form-text text-muted">Merci d'écrire le prénom de l'eleve.</small>
       </div>
+
+
+      <div class="form-group">
+        <label for="habil_electriqueInput">habilitation electrique</label>
+        <input
+                type="text" th:field="*{habil_electrique}" class="form-control" id="habil_electriqueInput"
+                aria-describedby="mailHelp" placeholder="Saisir l'adresse email"> <small
+              id="habil_electriqueHelp" class="form-text text-muted">Merci d'écrire le prénom de l'eleve.</small>
+      </div>
+
+
+      <div class="form-group">
+        <label for="visiteMedicalInput">visite Medical</label>
+        <input
+                type="text" th:field="*{visiteMedical}" class="form-control" id="visiteMedicalInput"
+                aria-describedby="mailHelp" placeholder="Saisir l'adresse email"> <small
+              id="visiteMedicalHelp" class="form-text text-muted">Merci d'écrire le prénom de l'eleve.</small>
+      </div>
+
+
+
+
 
 
 

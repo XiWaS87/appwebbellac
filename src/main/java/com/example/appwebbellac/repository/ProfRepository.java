@@ -4,6 +4,7 @@ package com.example.appwebbellac.repository;
 import com.example.appwebbellac.CustomProperties;
 import com.example.appwebbellac.model.Professeur;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -14,13 +15,14 @@ import org.springframework.web.client.RestTemplate;
 @Slf4j
 @Component
 public class ProfRepository {
+    @Autowired
     private CustomProperties props;
 
 
     public Iterable<Professeur> getProf() {
         System.out.println(props.getApiUrl());
         String baseApiUrl = props.getApiUrl();
-        String getProfUrl = baseApiUrl + "/profs";
+        String getProfUrl = baseApiUrl + "/prof";
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Iterable<Professeur>> response = restTemplate.exchange(
@@ -36,7 +38,7 @@ public class ProfRepository {
 
     public Professeur getProf(int id) {
         String baseApiUrl = props.getApiUrl();
-        String getProfUrl = baseApiUrl + "/profs/" + id;
+        String getProfUrl = baseApiUrl + "/prof/" + id;
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Professeur> response = restTemplate.exchange(

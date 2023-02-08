@@ -32,8 +32,8 @@ public class classeController {
     @GetMapping("/classes")
     public String classe(Model model) {
         Iterable<Classe> listClasse = classeRepository.getClasse();
-        model.addAttribute("eleves", listClasse);
-        return "";
+        model.addAttribute("classes", listClasse);
+        return "classe";
     }
 
     @GetMapping("/createClasse")
