@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <div th:replace="home :: myheader"></div>
   <meta charset="UTF-8">
@@ -10,29 +9,26 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
   <link th:href = "@{/home.css}" rel="stylesheet">
-
   <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-        crossorigin="anonymous">
-
-
 </head>
 <body>
 
-
-
 <div class="container special">
 
-  <h2 class="h2">Ajout d'un nouvel eleve</h2>
+  <h2 class="h2">Modification d'un employée</h2>
   <div>
     <form method="post"
           th:action="@{/saveEleve}" th:object="${eleve}">
+
+      <div class="form-group">
+        <input
+                type="hidden" th:field="*{idEleve}" class="form-control">
+      </div>
+
+
       <div class="form-group">
         <label for="firstNameInput">Prénom</label>
         <input
@@ -45,7 +41,7 @@
         <label for="lastNameInput">nom</label>
         <input
                 type="text" th:field="*{nom}" class="form-control" id="lastNameInput"
-        aria-describedby="lastNameHelp" placeholder="Saisir le nom">
+                aria-describedby="lastNameHelp" placeholder="Saisir le nom">
       </div>
 
 
@@ -80,49 +76,50 @@
                 aria-describedby="mailHelp" placeholder="Saisir la spécialité de l'élève">
 
 
-      <div class="form-group">
-        <label for="numInput">num tel</label>
-        <input
-                type="text" th:field="*{numerotel}" class="form-control" id="numInput"
-                aria-describedby="mailHelp" placeholder="Saisir le numéro de téléphone de l'élève">
-      </div>
+        <div class="form-group">
+          <label for="numInput">num tel</label>
+          <input
+                  type="text" th:field="*{numerotel}" class="form-control" id="numInput"
+                  aria-describedby="mailHelp" placeholder="Saisir le numéro de téléphone de l'élève">
+        </div>
 
 
-      <div class="form-group">
-        <label for="habil_travail_machineInput">habilitation travail machine</label>
-        <input
-                type="text" th:field="*{habil_travail_machine}" class="form-control" id="habil_travail_machineInput"
-                aria-describedby="mailHelp" placeholder="">
-      </div>
+        <div class="form-group">
+          <label for="habil_travail_machineInput">habilitation travail machine</label>
+          <input
+                  type="text" th:field="*{habil_travail_machine}" class="form-control" id="habil_travail_machineInput"
+                  aria-describedby="mailHelp" placeholder="">
+        </div>
 
 
-      <div class="form-group">
-        <label for="habil_travail_proximite_reseauInput">habilitation travail machine</label>
-        <input
-                type="text" th:field="*{habil_travail_proximite_reseau}" class="form-control" id="habil_travail_proximite_reseauInput"
-                aria-describedby="mailHelp" placeholder="">
-      </div>
+        <div class="form-group">
+          <label for="habil_travail_proximite_reseauInput">habilitation travail machine</label>
+          <input
+                  type="text" th:field="*{habil_travail_proximite_reseau}" class="form-control" id="habil_travail_proximite_reseauInput"
+                  aria-describedby="mailHelp" placeholder="">
+        </div>
 
 
-      <div class="form-group">
-        <label for="habil_electriqueInput">habilitation electrique</label>
-        <input
-                type="text" th:field="*{habil_electrique}" class="form-control" id="habil_electriqueInput"
-                aria-describedby="mailHelp" placeholder="">
-      </div>
+        <div class="form-group">
+          <label for="habil_electriqueInput">habilitation electrique</label>
+          <input
+                  type="text" th:field="*{habil_electrique}" class="form-control" id="habil_electriqueInput"
+                  aria-describedby="mailHelp" placeholder="">
+        </div>
 
-
-      <div class="form-group">
-        <label for="visiteMedicalInput">visite Medical</label>
-        <input
-                type="text" th:field="*{visiteMedical}" class="form-control" id="visiteMedicalInput"
-                aria-describedby="mailHelp" placeholder="">
-      <button type="submit" class="btn btn-primary">Créer</button>
+        <div class="form-group">
+          <label for="visiteMedicalInput">visite Medical</label>
+          <input
+                  type="text" th:field="*{visiteMedical}" class="form-control" id="visiteMedicalInput"
+                  aria-describedby="mailHelp" placeholder="">
+        </div>
+        <button type="submit" class="btn btn-primary">Modifier</button>
       </div>
     </form>
   </div>
 
 </div>
+
 
 <script
         src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -130,8 +127,5 @@
         src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-
-
-
 </body>
 </html>

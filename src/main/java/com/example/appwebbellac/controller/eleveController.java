@@ -28,6 +28,13 @@ public class eleveController {
         return "eleve";
     }
 
+    @GetMapping("/elevesModifSuppr")
+    public String eleveModifSuppr(Model model) {
+        Iterable<Eleve> listEleve = service.getEleve();
+        model.addAttribute("eleves", listEleve);
+        return "modifsupprEleve";
+    }
+
     @GetMapping("/createEleve")
     public String createEleve(Model model) {
         Eleve e = new Eleve();
@@ -39,22 +46,17 @@ public class eleveController {
     public String updateEleve(@PathVariable("id") final int id, Model model) {
         Eleve e = service.getEleve(id);
         model.addAttribute("eleve", e);
-        return "formUpdateEleve";
+        return "updateEleve";
     }
 
     @GetMapping("/deleteEleve/{id}")
     public ModelAndView deleteEmployee(@PathVariable("id") final int id) {
         service.getEleve(id);
-        return new ModelAndView("redirect:/");
+        return new ModelAndView("redirect:/elevesModifSuppr");
     }
 
     @PostMapping("/saveEleve")
     public ModelAndView saveEleve(@ModelAttribute Eleve eleve) {
-        if(eleve.getIdEleve() != null ) {
-            // Employee from update form has the password field not filled,
-            // so we fill it with the current password.
-            Eleve current = service.getEleve(eleve.getIdEleve());
-        }
         service.saveEleve(eleve);
         return new ModelAndView("redirect:/");
     }

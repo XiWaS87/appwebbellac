@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <div th:replace="home :: myheader"></div>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <title>bellac Web Application</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <link th:href = "@{/home.css}" rel="stylesheet">
+
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+
+</head>
+<body>
+
+
+
+<div class="container special">
+
+  <h2 class="h2">Ajout d'un nouveau professeur</h2>
+  <div>
+    <form method="post"
+          th:action="@{/saveProf}" th:object="${prof}">
+      <div class="form-group">
+        <label for="firstNameInput">Prénom</label>
+        <input
+                type="text" th:field="*{PRENOM}" class="form-control" id="firstNameInput"
+                aria-describedby="firstNameHelp" placeholder="Saisir le prénom">
+      </div>
+
+
+      <div class="form-group">
+        <label for="lastNameInput">nom</label>
+        <input
+                type="text" th:field="*{NOM}" class="form-control" id="lastNameInput"
+                aria-describedby="lastNameHelp" placeholder="Saisir le nom">
+      </div>
+
+
+      <div class="form-group">
+        <label for="adresseInput">mail</label>
+        <input
+                type="text" th:field="*{MAIL}" class="form-control" id="adresseInput"
+                aria-describedby="mailHelp" placeholder="Saisir le mail">
+      </div>
+
+
+      <div class="form-group">
+        <label for="naissanceInput">Numero de téléphone</label>
+        <input
+                type="text" th:field="*{NUMEROTEL}" class="form-control" id="naissanceInput"
+                aria-describedby="mailHelp" placeholder="Saisir le numero de téléphone">
+      </div>
+
+
+      <div class="form-group">
+        <label for="MailInput">Classe</label>
+        <input
+                type="text" th:field="*{classe}" class="form-control" id="MailInput"
+                aria-describedby="mailHelp" placeholder="Saisir la classe">
+      </div>
+
+
+      <div class="form-group">
+        <label for="speInput">Acces</label>
+        <input
+                type="text" th:field="*{acces}" class="form-control" id="speInput"
+                aria-describedby="mailHelp" placeholder="Saisir l'acces">
+          <button type="submit" class="btn btn-primary">Créer</button>
+        </div>
+    </form>
+  </div>
+
+</div>
+
+<script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>

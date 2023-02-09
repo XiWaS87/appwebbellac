@@ -41,7 +41,7 @@ public class EleveRepository {
 
     public Eleve getEleve(int id) {
         String baseApiUrl = props.getApiUrl();
-        String getEleveUrl = baseApiUrl + "/eleves/" + id;
+        String getEleveUrl = baseApiUrl + "/eleve/" + id;
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Eleve> response = restTemplate.exchange(
@@ -84,7 +84,7 @@ public class EleveRepository {
      */
     public Eleve updateEleve(Eleve e) {
         String baseApiUrl = props.getApiUrl();
-        String updateEleveUrl = baseApiUrl + "/eleves/" + e.getIdEleve();
+        String updateEleveUrl = baseApiUrl + "/eleve/" + e.getIdEleve();
 
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<Eleve> request = new HttpEntity<Eleve>(e);

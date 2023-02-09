@@ -40,7 +40,7 @@ public class profControlleur {
     public String createProf(Model model) {
         Professeur p = new Professeur();
         model.addAttribute("prof", p);
-        return "formNewProf";
+        return "formNewProfesseur";
     }
 
     @GetMapping("/updateProf/{id}")

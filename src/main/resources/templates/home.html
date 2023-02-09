@@ -11,6 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
     <link th:href = "@{/home.css}" rel="stylesheet">
 
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -25,64 +30,34 @@
         </div>
     </div>
 </header>
-
-<nav class="side-nav">
-    <div class="wrapper">
-        <div class="nav-bloc n-1">
-            <h4>ELEVE</h4>
-            <div class="sub-nav">
-                <h2>Gestion des élèves</h2>
-                <ul>
-                    <li>
-                        <a th:href="@{/eleves}"><button class="btn btn-info">Ajouter des élèves</button></a>
-                    </li>
+    <nav>
+        <ul class="liste-items">
+            <li class="items">
+                <span>ELEVE</span>
+                <ul class="sous-liste">
+                    <li><a th:href="@{/eleves}"><button class="btn btn-dark">Liste des élèves</button></a></li>
+                    <li><a th:href="@{/createEleve}"><button class="btn btn-dark">Ajouter un élève</button></a></li>
+                    <li><a th:href="@{/elevesModifSuppr}"><button class="btn btn-dark">Gestion élèves</button></a></li>
                 </ul>
-            </div>
-        </div>
-
-        <div class="nav-bloc n-2">
-            <h4>DIPLOME</h4>
-            <div class="sub-nav">
-                <h2>Gestion des diplômes</h2>
-                <ul>
-                    <li>
-                        <a >Ajouter un diplôme</a>
-                    </li>
-                    <li>
-                        <a >Ajouter des compétences</a>
-                    </li>
-                    <li>
-                        <a >Ajouter des sous-compétences</a>
-                    </li>
+            </li>
+            <li class="items">PROFESSEUR
+                <ul class="sous-liste">
+                    <li><a th:href="@{/profs}"><button class="btn btn-dark">Liste des professeurs</button></a></li>
+                    <li><a th:href="@{/createProf}"><button class="btn btn-dark">Ajouter un professeur</button></a></li>
+                    <li><a th:href="@{/createEleve}"><button class="btn btn-dark">Gestion des professeurs</button></a></li>
                 </ul>
-            </div>
-        </div>
+            </li>
+            <li class="items">Contact</li>
+            <li class="items">Notifications</li>
+            <li class="items">Deconnexion</li>
+        </ul>
+    </nav>
 
-        <div class="nav-bloc n-3">
-            <h4>PROFESSEUR</h4>
-            <div class="sub-nav">
-                <h2>Gestion des professeur</h2>
-                <ul>
-                    <li>
-                        <a th:href="@{/profs}"><button class="btn btn-info">Ajouter des professeurs</button></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="nav-bloc n-4">
-            <h4>CLASSE</h4>
-            <div class="sub-nav">
-                <h2>Subtitle 4</h2>
-                <ul>
-                    <li>
-                        <a th:href="@{/classes}"><button class="btn btn-info">Ajouter des classes</button></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+    <section classs="section1"></section>
+    <section classs="section2"></section>
+    <section classs="section3"></section>
+    <section classs="section4"></section>
+    <section classs="section5"></section>
     </div>
-</nav>
-</div>
 </body>
 
