@@ -47,9 +47,14 @@
                     <li><a th:href="@{/createEleve}"><button class="btn btn-dark">Gestion des professeurs</button></a></li>
                 </ul>
             </li>
-            <li class="items">Contact</li>
-            <li class="items">Notifications</li>
-            <li class="items">Deconnexion</li>
+            <li class="items">DIPLOME
+                <ul class="sous-liste">
+                    <li><a th:href="@{/diplomes}"><button class="btn btn-dark">Liste des diplomes</button></a></li>
+                    <li><a th:href="@{/createDiplome}"><button class="btn btn-dark">Ajouter un diplome</button></a></li>
+                    <li><a th:href="@{/diplomesModifSuppr}"><button class="btn btn-dark">Gestion des diplomes</button></a></li>
+                </ul>
+            </li>
+
         </ul>
     </nav>
 

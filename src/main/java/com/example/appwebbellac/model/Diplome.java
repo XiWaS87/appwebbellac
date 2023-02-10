@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class Diplome {
-    private long IdDiplome;
+    private Integer IdDiplome;
 
     private String NOM;
 }
