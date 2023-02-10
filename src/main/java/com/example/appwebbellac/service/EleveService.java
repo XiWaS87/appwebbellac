@@ -30,7 +30,6 @@ public class EleveService {
 
         // Functional rule : Last name must be capitalized.
         eleve.setNom(eleve.getNom().toUpperCase());
-
         if(eleve.getIdEleve() == null) {
             // If id is null, then it is a new employee.
             savedEleve = repositoryEleve.createEleve(eleve);

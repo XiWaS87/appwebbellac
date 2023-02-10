@@ -75,7 +75,7 @@ public class ClasseRepository {
 
     public Classe updateClasse(Classe c) {
         String baseApiUrl = props.getApiUrl();
-        String updateClasseUrl = baseApiUrl + "/classes/" + c.getIdCLasse();
+        String updateClasseUrl = baseApiUrl + "/classes/" + c.getIdClasse();
 
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<Classe> request = new HttpEntity<Classe>(c);

@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.List;
 @Data
 public class Classe {
-    private Integer IdCLasse;
+    private Integer IdClasse;
 
     private String NOMCLASSE;
     private List<Eleve> eleves;

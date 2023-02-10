@@ -58,10 +58,10 @@ public class classeController {
 
     @PostMapping("/saveClasse")
     public ModelAndView saveClasse(@ModelAttribute Classe classe) {
-        if(classe.getIdCLasse() != null ) {
+        if(classe.getIdClasse() != null ) {
             // Employee from update form has the password field not filled,
             // so we fill it with the current password.
-            Classe current = service.getClasse(classe.getIdCLasse());
+            Classe current = service.getClasse(classe.getIdClasse());
         }
         service.saveClasse(classe);
         return new ModelAndView("redirect:/");

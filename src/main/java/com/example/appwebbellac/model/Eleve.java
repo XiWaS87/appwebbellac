@@ -1,6 +1,8 @@
 package com.example.appwebbellac.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -20,7 +22,9 @@ public class Eleve {
     private String prenom;
     private String numerotel;
     private String mail;
+
     private Professeur professeur;
+
     private Tuteur tuteur;
 
     private Diplome diplome;

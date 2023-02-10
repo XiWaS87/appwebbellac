@@ -63,7 +63,7 @@ public class EleveRepository {
      */
     public Eleve createEleve(Eleve e) {
         String baseApiUrl = props.getApiUrl();
-        String createEleveUrl = baseApiUrl + "/eleve";
+        String createEleveUrl = baseApiUrl + "/AddEleve";
 
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<Eleve> request = new HttpEntity<Eleve>(e);
@@ -84,7 +84,7 @@ public class EleveRepository {
      */
     public Eleve updateEleve(Eleve e) {
         String baseApiUrl = props.getApiUrl();
-        String updateEleveUrl = baseApiUrl + "/eleve/" + e.getIdEleve();
+        String updateEleveUrl = baseApiUrl + "/Modifeleve/" + e.getIdEleve();
 
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<Eleve> request = new HttpEntity<Eleve>(e);
@@ -102,7 +102,7 @@ public class EleveRepository {
 
     public void deleteEleve(int id) {
         String baseApiUrl = props.getApiUrl();
-        String deleteEleveUrl = baseApiUrl + "/eleves/" + id;
+        String deleteEleveUrl = baseApiUrl + "/delEleve/" + id;
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Void> response = restTemplate.exchange(
