@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class Entreprise {
 
-    private long IdEnt;
+    private Integer IdEnt;
 
 
     private String nomEnt;

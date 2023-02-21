@@ -3,7 +3,7 @@ package com.example.appwebbellac.repository;
 
 import com.example.appwebbellac.CustomProperties;
 import com.example.appwebbellac.model.Diplome;
-import com.example.appwebbellac.model.Eleve;
+import com.example.appwebbellac.model.Entreprise;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
@@ -15,41 +15,41 @@ import org.springframework.web.client.RestTemplate;
 
 @Slf4j
 @Component
-public class DiplomeRepository {
+public class EntrepriseRepository {
 
     @Autowired
     private CustomProperties props;
-    public Iterable<Diplome> getDiplome() {
+    public Iterable<Entreprise> getEntreprise() {
 
         String baseApiUrl = props.getApiUrl();
-        String getDiplomeUrl = baseApiUrl + "/diplome";
+        String getEntrepriseUrl = baseApiUrl + "/entreprises";
 
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<Iterable<Diplome>> response = restTemplate.exchange(
-                getDiplomeUrl,
+        ResponseEntity<Iterable<Entreprise>> response = restTemplate.exchange(
+                getEntrepriseUrl,
                 HttpMethod.GET,
                 null,
-                new ParameterizedTypeReference<Iterable<Diplome>>() {}
+                new ParameterizedTypeReference<Iterable<Entreprise>>() {}
         );
 
-        log.debug("Get diplome call " + response.getStatusCode().toString());
+        log.debug("Get Entreprise call " + response.getStatusCode().toString());
 
         return response.getBody();
     }
 
-    public Diplome getDiplome(int id) {
+    public Entreprise getEntreprise(int id) {
         String baseApiUrl = props.getApiUrl();
-        String getDiplomeUrl = baseApiUrl + "/diplome/" + id;
+        String getEntrepriseUrl = baseApiUrl + "/entreprises/" + id;
 
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<Diplome> response = restTemplate.exchange(
-                getDiplomeUrl,
+        ResponseEntity<Entreprise> response = restTemplate.exchange(
+                getEntrepriseUrl,
                 HttpMethod.GET,
                 null,
-                Diplome.class
+                Entreprise.class
         );
 
-        log.debug("Get diplome call " + response.getStatusCode().toString());
+        log.debug("Get Entreprise call " + response.getStatusCode().toString());
 
         return response.getBody();
     }
@@ -59,17 +59,17 @@ public class DiplomeRepository {
      * @param d A new employee (without an id)
      * @return The employee full filled (with an id)
      */
-    public Diplome createDiplome(Diplome d) {
+    public Entreprise createEntreprise(Entreprise e) {
         String baseApiUrl = props.getApiUrl();
-        String createDiplomeUrl = baseApiUrl + "/addDiplome";
+        String createEntrepriseUrl = baseApiUrl + "/AddEntreprise";
 
         RestTemplate restTemplate = new RestTemplate();
-        HttpEntity<Diplome> request = new HttpEntity<Diplome>(d);
-        ResponseEntity<Diplome> response = restTemplate.exchange(
-                createDiplomeUrl,
+        HttpEntity<Entreprise> request = new HttpEntity<Entreprise>(e);
+        ResponseEntity<Entreprise> response = restTemplate.exchange(
+                createEntrepriseUrl,
                 HttpMethod.POST,
                 request,
-                Diplome.class);
+                Entreprise.class);
 
         log.debug("Create diplome call " + response.getStatusCode().toString());
         return response.getBody();
@@ -79,17 +79,17 @@ public class DiplomeRepository {
      * Update an employee - using the PUT HTTP Method.
      * @param d Existing employee to update
      */
-    public Diplome updateDiplome(Diplome d) {
+    public Entreprise updateEntreprise(Entreprise e) {
         String baseApiUrl = props.getApiUrl();
-        String updateDiplomeUrl = baseApiUrl + "/modifDiplome/" + d.getIdDiplome();
+        String updateEntrepriseUrl = baseApiUrl + "/modifEntreprise/" + e.getIdEnt();
 
         RestTemplate restTemplate = new RestTemplate();
-        HttpEntity<Diplome> request = new HttpEntity<Diplome>(d);
-        ResponseEntity<Diplome> response = restTemplate.exchange(
-                updateDiplomeUrl,
+        HttpEntity<Entreprise> request = new HttpEntity<Entreprise>(e);
+        ResponseEntity<Entreprise> response = restTemplate.exchange(
+                updateEntrepriseUrl,
                 HttpMethod.PUT,
                 request,
-                Diplome.class);
+                Entreprise.class);
 
         log.debug("Update diplome call " + response.getStatusCode().toString());
 
@@ -97,13 +97,13 @@ public class DiplomeRepository {
     }
 
 
-    public void deleteDiplome(final int id) {
+    public void deleteEntreprise(final int id) {
         String baseApiUrl = props.getApiUrl();
-        String deleteDiplomeUrl = baseApiUrl + "/delDiplome/" + id;
+        String deleteEntrepriseUrl = baseApiUrl + "/delEntreprise/" + id;
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Void> response = restTemplate.exchange(
-                deleteDiplomeUrl,
+                deleteEntrepriseUrl,
                 HttpMethod.DELETE,
                 null,
                 Void.class);

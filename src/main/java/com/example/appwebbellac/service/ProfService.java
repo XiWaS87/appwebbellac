@@ -33,7 +33,7 @@ public class ProfService {
         Professeur savedProf;
 
         // Functional rule : Last name must be capitalized.
-        professeur.setNOM(professeur.getNOM().toUpperCase());
+        professeur.setNOM(professeur.getNOM());
 
         if(professeur.getIdProf() == null) {
             // If id is null, then it is a new employee.

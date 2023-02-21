@@ -55,7 +55,7 @@ public class ProfRepository {
 
     public Professeur createProf(Professeur p) {
         String baseApiUrl = props.getApiUrl();
-        String createProfUrl = baseApiUrl + "/profs";
+        String createProfUrl = baseApiUrl + "/addProf";
 
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<Professeur> request = new HttpEntity<Professeur>(p);

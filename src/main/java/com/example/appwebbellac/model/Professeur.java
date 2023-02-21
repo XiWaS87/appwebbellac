@@ -16,5 +16,6 @@ public class Professeur {
 
     private String MAIL;
     private Acces acces;
-    private List<Classe> classe;
+
+    private Classe classe;
 }

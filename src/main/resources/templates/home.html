@@ -32,8 +32,7 @@
 </header>
     <nav>
         <ul class="liste-items">
-            <li class="items">
-                <span>ELEVE</span>
+            <li class="items">ELEVE
                 <ul class="sous-liste">
                     <li><a th:href="@{/eleves}"><button class="btn btn-dark">Liste des élèves</button></a></li>
                     <li><a th:href="@{/createEleve}"><button class="btn btn-dark">Ajouter un élève</button></a></li>
@@ -48,12 +47,19 @@
                 </ul>
             </li>
             <li class="items">DIPLOME
-                <ul class="sous-liste">
-                    <li><a th:href="@{/diplomes}"><button class="btn btn-dark">Liste des diplomes</button></a></li>
-                    <li><a th:href="@{/createDiplome}"><button class="btn btn-dark">Ajouter un diplome</button></a></li>
-                    <li><a th:href="@{/diplomesModifSuppr}"><button class="btn btn-dark">Gestion des diplomes</button></a></li>
-                </ul>
-            </li>
+            <ul class="sous-liste">
+                <li><a th:href="@{/diplomes}"><button class="btn btn-dark">Liste des diplomes</button></a></li>
+                <li><a th:href="@{/createDiplome}"><button class="btn btn-dark">Ajouter un diplome</button></a></li>
+                <li><a th:href="@{/diplomesModifSuppr}"><button class="btn btn-dark">Gestion des diplomes</button></a></li>
+            </ul>
+        </li>
+            <li class="items">ENTREPRISE
+            <ul class="sous-liste">
+                <li><a th:href="@{/entreprises}"><button class="btn btn-dark">Liste des entreprise</button></a></li>
+                <li><a th:href="@{/createEntreprise}"><button class="btn btn-dark">Ajouter une entreprise</button></a></li>
+                <li><a th:href="@{/entreprisesModifSuppr}"><button class="btn btn-dark">Gestion des entreprises</button></a></li>
+            </ul>
+        </li>
 
         </ul>
     </nav>

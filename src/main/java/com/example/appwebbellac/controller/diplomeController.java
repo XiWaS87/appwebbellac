@@ -55,7 +55,7 @@ public class diplomeController {
 
     @GetMapping("/deleteDiplome/{id}")
     public ModelAndView deleteDiplome(@PathVariable("id") final int id) {
-        service.getDiplome(id);
+        service.deleteDiplome(id);
         return new ModelAndView("redirect:/diplomesModifSuppr");
     }
 

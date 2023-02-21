@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <div th:replace="home :: myheader"></div>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <title>bellac Web Application</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <link th:href = "@{/home.css}" rel="stylesheet">
+
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+
+</head>
+<body>
+
+
+
+<div class="container special">
+
+  <h2 class="h2">Ajout d'une nouvelle entreprise</h2>
+  <div>
+    <form method="post"
+          th:action="@{/saveEntreprise}" th:object="${entreprise}">
+
+      <div class="form-group">
+        <label for="lastNameInput">nom</label>
+        <input
+                type="text" th:field="*{nomEnt}" class="form-control" id="lastNameInput"
+                aria-describedby="lastNameHelp" placeholder="Saisir le nom">
+      </div>
+
+      <div class="form-group">
+        <label for="responsableInput">nom du responsable</label>
+        <input
+                type="text" th:field="*{responsableEnt}" class="form-control" id="responsableInput"
+                aria-describedby="responsableHelp" placeholder="Saisir le nom">
+      </div>
+
+      <div class="form-group">
+        <label for="AdresseInput">Adresse</label>
+        <input
+                type="text" th:field="*{adresseEnt}" class="form-control" id="AdresseInput"
+                aria-describedby="AdresseHelp" placeholder="Saisir le nom">
+      </div>
+
+      <div class="form-group">
+        <label for="téléphoneInput">numero de téléphone</label>
+        <input
+                type="text" th:field="*{telEnt}" class="form-control" id="téléphoneInput"
+                aria-describedby="téléphoneHelp" placeholder="Saisir le nom">
+      </div>
+
+      <div class="form-group">
+        <label for="mailInput">mail</label>
+        <input
+                type="text" th:field="*{mailEnt}" class="form-control" id="mailInput"
+                aria-describedby="mailHelp" placeholder="Saisir le nom">
+      </div>
+
+      <div class="form-group">
+        <label for="immatriculationInput">Num immatriculation</label>
+        <input
+                type="text" th:field="*{numeroImmatriculationEnt}" class="form-control" id="immatriculationInput"
+                aria-describedby="immatriculationHelp" placeholder="Saisir le nom">
+      </div>
+
+      <div class="form-group">
+        <label for="nomassuranceInput">Nom assurance</label>
+        <input
+                type="text" th:field="*{nomAssuranceEnt}" class="form-control" id="nomassuranceInput"
+                aria-describedby="nomassuranceHelp" placeholder="Saisir le nom">
+      </div>
+
+      <div class="form-group">
+        <label for="numassuranceInput">Num assurance</label>
+        <input
+                type="text" th:field="*{numeroAssuranceEnt}" class="form-control" id="numassuranceInput"
+                aria-describedby="numassuranceHelp" placeholder="Saisir le nom">
+      </div>
+
+
+
+
+
+      <button type="submit" class="btn btn-primary">Créer</button>
+
+    </form>
+  </div>
+
+</div>
+
+<script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>
