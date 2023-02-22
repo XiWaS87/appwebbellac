@@ -1,5 +1,6 @@
 package com.example.appwebbellac.service;
 
+import com.example.appwebbellac.model.Acces;
 import com.example.appwebbellac.model.Eleve;
 import com.example.appwebbellac.model.Professeur;
 import com.example.appwebbellac.repository.EleveRepository;
@@ -37,6 +38,13 @@ public class ProfService {
 
         if(professeur.getIdProf() == null) {
             // If id is null, then it is a new employee.
+            String identifiant = professeur.getNOM()+"."+professeur.getPRENOM();
+            String MDP = professeur.getNOM()+"12345";
+            Acces a = new Acces();
+            a.setROLE("prof");
+            a.setIDENTIFIANT(identifiant);
+            a.setMDP(MDP);
+            professeur.setAcces(a);
             savedProf = profRepository.createProf(professeur);
         } else {
             savedProf = profRepository.updateProf(professeur);

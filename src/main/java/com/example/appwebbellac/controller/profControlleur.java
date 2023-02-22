@@ -1,10 +1,13 @@
 package com.example.appwebbellac.controller;
 
 
+import com.example.appwebbellac.model.Classe;
 import com.example.appwebbellac.model.Eleve;
+import com.example.appwebbellac.model.Entreprise;
 import com.example.appwebbellac.model.Professeur;
 import com.example.appwebbellac.repository.EleveRepository;
 import com.example.appwebbellac.repository.ProfRepository;
+import com.example.appwebbellac.service.ClasseService;
 import com.example.appwebbellac.service.EleveService;
 import com.example.appwebbellac.service.ProfService;
 import lombok.Data;
@@ -22,6 +25,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class profControlleur {
 
     @Autowired
+    private ClasseService classeService;
+    @Autowired
     private ProfService service;
 
     @GetMapping("/")
@@ -36,9 +41,18 @@ public class profControlleur {
         return "prof";
     }
 
+    @GetMapping("/profModifSuppr")
+    public String profModifSuppr(Model model) {
+        Iterable<Professeur> listProfesseur = service.getProf();
+        model.addAttribute("profs", listProfesseur);
+        return "modifsupprProfesseur";
+    }
+
     @GetMapping("/createProf")
     public String createProf(Model model) {
         Professeur p = new Professeur();
+        Iterable<Classe> c = classeService.getClasse();
+        model.addAttribute("classe", c);
         model.addAttribute("prof", p);
         return "formNewProfesseur";
     }
@@ -47,7 +61,7 @@ public class profControlleur {
     public String updateProf(@PathVariable("id") final int id, Model model) {
         Professeur p = service.getProf(id);
         model.addAttribute("eleve", p);
-        return "formUpdateProf";
+        return "updateProf";
     }
 
     @GetMapping("/deleteProf/{id}")

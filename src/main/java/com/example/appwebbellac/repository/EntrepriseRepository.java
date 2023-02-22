@@ -39,7 +39,7 @@ public class EntrepriseRepository {
 
     public Entreprise getEntreprise(int id) {
         String baseApiUrl = props.getApiUrl();
-        String getEntrepriseUrl = baseApiUrl + "/entreprises/" + id;
+        String getEntrepriseUrl = baseApiUrl + "/entreprise/" + id;
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Entreprise> response = restTemplate.exchange(

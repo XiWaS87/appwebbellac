@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <div th:replace="home :: myheader"></div>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <title>bellac Web Application</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <link th:href = "@{/home.css}" rel="stylesheet">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+</head>
+<body>
+<div class="container special">
+  <h2 class="h2">Liste des eleves</h2>
+  <div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+      <tr>
+        <th>Prénom</th>
+        <th>Nom</th>
+        <th>mail</th>
+        <th>numero de tel</th>
+        <th>Classe</th>
+        <th>Acces</th>
+      </tr>
+      </thead>
+
+
+      <tbody>
+      <tr th:if="${profs.empty}">
+        <td colspan="3">Aucun eleve en base de données</td>
+      </tr>
+      <tr th:each="prof: ${profs}">
+        <td><span th:text="${prof.PRENOM}"> Prénom </span></td>
+        <td><span th:text="${prof.NOM}"> Nom </span></td>
+        <td><span th:text="${prof.MAIL}"> mail </span></td>
+        <td><span th:text="${prof.NUMEROTEL}"> numero de tel </span></td>
+        <td><span th:text="${prof.classe}"> Classe </span></td>
+        <td><span th:text="${prof.acces}"> Acces </span></td>
+        <td>
+          <a th:href="@{/updateProf/{id}(id=${prof.idProf})}"><button class="btn btn-info">Modifier</button></a>
+          <a th:href="@{/deleteProf/{id}(id=${prof.idProf})}"><button class="btn btn-danger">Supprimer</button></a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+</title>
+</head>
+<body>
+
+</body>
+</html>

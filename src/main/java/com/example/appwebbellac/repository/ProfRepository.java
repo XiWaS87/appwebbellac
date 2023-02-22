@@ -72,7 +72,7 @@ public class ProfRepository {
 
     public Professeur updateProf(Professeur p) {
         String baseApiUrl = props.getApiUrl();
-        String updateProfUrl = baseApiUrl + "/profs/" + p.getIdProf();
+        String updateProfUrl = baseApiUrl + "/ModifProf/" + p.getIdProf();
 
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<Professeur> request = new HttpEntity<Professeur>(p);
@@ -89,7 +89,7 @@ public class ProfRepository {
 
     public void deleteProf(int id) {
         String baseApiUrl = props.getApiUrl();
-        String deleteProfUrl = baseApiUrl + "/profs/" + id;
+        String deleteProfUrl = baseApiUrl + "/delProf/" + id;
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Void> response = restTemplate.exchange(
