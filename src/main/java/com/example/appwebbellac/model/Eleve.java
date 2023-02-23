@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
@@ -17,6 +18,19 @@ public class Eleve {
     private boolean habil_electrique;
     private String specialite;
     private Date dateNaissance;
+
+
+    private String dateCreation_formatted;
+
+    public String getDateCreation_formatted() {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        String formattedDate = formatter.format(this.dateNaissance);
+        return formattedDate;
+    }
+
+    public void setDateCreation_formatted(String dateCreation_formatted) {
+        this.dateCreation_formatted = dateCreation_formatted;
+    }
     private boolean visiteMedical;
     private String nom;
     private String prenom;
