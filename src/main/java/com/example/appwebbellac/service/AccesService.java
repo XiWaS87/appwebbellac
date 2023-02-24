@@ -21,8 +21,8 @@ public class AccesService {
     }
 
 
-    public Iterable<Acces> getAcces(){
-        return accesRepository.getAcces();
+    public Acces getLastAcces(){
+        return accesRepository.getLastAcces();
     }
 
 

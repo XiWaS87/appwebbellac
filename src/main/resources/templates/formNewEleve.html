@@ -105,18 +105,26 @@
 
 
         <div class="form-group">
-          <label for="numInput">diplome</label>
-          <input
-                  type="text" th:field="*{diplome.idDiplome}" class="form-control" id="diplomeInput"
-                  aria-describedby="diplomeHelp" placeholder="Saisir le numéro de téléphone de l'élève">
+          <label for="diplomeInput">diplome</label>
+          <select th:field="*{diplome}" class="form-control" id="diplomeInput" aria-describedby="diplomeHelp" >
+            <option value="">
+              choisir un diplome
+            </option>
+            <option th:each="d : ${diplome}" th:value="${d}" th:text="${d.getNOM}">
+            </option>
+          </select>
         </div>
 
 
         <div class="form-group">
-          <label for="numInput">classe</label>
-          <input
-                  type="text" th:field="*{classe.IdClasse}" class="form-control" id="classeInput"
-                  aria-describedby="classeHelp" placeholder="Saisir le numéro de téléphone de l'élève">
+          <label for="classeInput">classe</label>
+          <select th:field="*{classe}" class="form-control" id="classeInput" aria-describedby="classeHelp" >
+            <option value="">
+              choisir une classe
+            </option>
+            <option th:each="c : ${classe}" th:value="${c}" th:text="${c.getNOMCLASSE()}">
+            </option>
+          </select>
         </div>
 
 
@@ -158,8 +166,8 @@
         <input
                 type="text" th:field="*{visiteMedical}" class="form-control" id="visiteMedicalInput"
                 aria-describedby="mailHelp" placeholder="">
-      <button type="submit" class="btn btn-primary">Créer</button>
       </div>
+        <button type="submit" class="btn btn-primary">Créer</button>
     </form>
   </div>
 

@@ -20,17 +20,18 @@ public class AccesRepository {
     private CustomProperties props;
 
 
-    public Iterable<Acces> getAcces() {
+    public Acces getLastAcces() {
 
         String baseApiUrl = props.getApiUrl();
         String getAccesUrl = baseApiUrl + "/LastAcces";
 
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<Iterable<Acces>> response = restTemplate.exchange(
+        ResponseEntity <Acces> response = restTemplate.exchange(
                 getAccesUrl,
                 HttpMethod.GET,
                 null,
-                new ParameterizedTypeReference<Iterable<Acces>>() {}
+                Acces.class
+
         );
 
         log.debug("Get Employees call " + response.getStatusCode().toString());

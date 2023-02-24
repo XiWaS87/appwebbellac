@@ -1,12 +1,10 @@
 package com.example.appwebbellac.controller;
 
 
-import com.example.appwebbellac.model.Classe;
-import com.example.appwebbellac.model.Eleve;
-import com.example.appwebbellac.model.Entreprise;
-import com.example.appwebbellac.model.Professeur;
+import com.example.appwebbellac.model.*;
 import com.example.appwebbellac.repository.EleveRepository;
 import com.example.appwebbellac.repository.ProfRepository;
+import com.example.appwebbellac.service.AccesService;
 import com.example.appwebbellac.service.ClasseService;
 import com.example.appwebbellac.service.EleveService;
 import com.example.appwebbellac.service.ProfService;
@@ -28,6 +26,8 @@ public class profControlleur {
     private ClasseService classeService;
     @Autowired
     private ProfService service;
+    @Autowired
+    private AccesService accesService;
 
     @GetMapping("/")
     public String home() {
@@ -72,11 +72,22 @@ public class profControlleur {
 
     @PostMapping("/saveProf")
     public ModelAndView saveProf(@ModelAttribute Professeur professeur) {
-        if(professeur.getIdProf() != null) {
-            // Employee from update form has the password field not filled,
-            // so we fill it with the current password.
-            Professeur current = service.getProf(professeur.getIdProf());
+        if(professeur.getIdProf() == null) {
+
+            String identifiant = professeur.getNOM()+"."+professeur.getPRENOM();
+            String MDP = professeur.getNOM()+"12345";
+            Acces a = new Acces();
+            a.setROLE("prof");
+            a.setIDENTIFIANT(identifiant);
+            a.setMDP(MDP);
+
+            accesService.saveAcces(a);
+            Acces test = accesService.getLastAcces();
+            professeur.setAccesP(test);
+
+            System.out.println(professeur);
         }
+        System.out.println(accesService.getLastAcces());
         service.saveProf(professeur);
         return new ModelAndView("redirect:/");
     }

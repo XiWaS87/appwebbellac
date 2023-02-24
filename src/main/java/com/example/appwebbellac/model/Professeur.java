@@ -15,7 +15,7 @@ public class Professeur {
     private String NUMEROTEL;
 
     private String MAIL;
-    private Acces acces;
+    private Acces accesP;
 
     private Classe classe;
 }

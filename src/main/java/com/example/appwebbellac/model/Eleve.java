@@ -45,6 +45,6 @@ public class Eleve {
 
     private Classe classe;
 
-    private Acces acces;
+    private Acces accesE;
 
 }

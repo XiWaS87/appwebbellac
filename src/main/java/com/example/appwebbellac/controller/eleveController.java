@@ -1,7 +1,11 @@
 package com.example.appwebbellac.controller;
 
+import com.example.appwebbellac.model.Classe;
+import com.example.appwebbellac.model.Diplome;
 import com.example.appwebbellac.model.Eleve;
 import com.example.appwebbellac.repository.EleveRepository;
+import com.example.appwebbellac.service.ClasseService;
+import com.example.appwebbellac.service.DiplomeService;
 import com.example.appwebbellac.service.EleveService;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +23,12 @@ public class eleveController {
 
     @Autowired
     private EleveService service;
+
+    @Autowired
+    private ClasseService classeService;
+
+    @Autowired
+    private DiplomeService diplomeService;
 
 
     @GetMapping("/eleves")
@@ -38,6 +48,10 @@ public class eleveController {
     @GetMapping("/createEleve")
     public String createEleve(Model model) {
         Eleve e = new Eleve();
+        Iterable<Classe> c = classeService.getClasse();
+        Iterable<Diplome> d = diplomeService.getDiplome();
+        model.addAttribute("classe", c);
+        model.addAttribute("diplome", d);
         model.addAttribute("eleve", e);
         return "formNewEleve";
     }

@@ -58,7 +58,7 @@ public class ClasseRepository {
 
     public Classe createClasse(Classe c) {
         String baseApiUrl = props.getApiUrl();
-        String createClasseUrl = baseApiUrl + "/classes";
+        String createClasseUrl = baseApiUrl + "/addClasse";
 
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<Classe> request = new HttpEntity<Classe>(c);

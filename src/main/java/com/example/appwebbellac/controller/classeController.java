@@ -40,7 +40,7 @@ public class classeController {
     public String createClasse(Model model) {
         Classe c = new Classe();
         model.addAttribute("classe", c);
-        return "";
+        return "formNewClasse";
     }
 
     @GetMapping("/updateClasse/{id}")
