@@ -36,7 +36,7 @@ public class ClasseService {
         // Functional rule : Last name must be capitalized.
         classe.setNOMCLASSE(classe.getNOMCLASSE().toUpperCase());
 
-        if(classe.getIdClasse() == null) {
+        if(classe.getIdCLasse() == null) {
             // If id is null, then it is a new employee.
             savedClasse = classeRepository.createClasse(classe);
         } else {

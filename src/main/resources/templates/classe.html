@@ -22,7 +22,7 @@
       <thead>
       <tr>
         <th>Nom de la classe</th>
-        <th>ID</th>
+        <th>Nom professeur</th>
       </tr>
       </thead>
 
@@ -33,7 +33,7 @@
       </tr>
       <tr th:each="classe: ${classes}">
         <td><span th:text="${classe.NOMCLASSE}"> Nom </span></td>
-        <td><span th:text="${classe.IdClasse}"> Nom </span></td>
+        <td><span th:text="${classe.profeseur.NOM}"> Nom </span></td>
         <td>
 
         </td>
