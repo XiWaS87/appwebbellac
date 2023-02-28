@@ -65,19 +65,7 @@
       </div>
 
 
-      <div class="form-group">
-        <label for="classeInput">classe</label>
-        <select
-                th:field="*{classe.IdClasse}"
-                class="form-control" id="classeInput"
-                aria-describedby="classeHelp" >
-        <option value="">
-        choisir une classe
-        </option>
-          <option th:forEach="${classe}" th:value="${classe.IdClasse}" th:text="${classe.NOM}">
-          </option>
-        </select>
-      </div>
+
       <button type="submit" class="btn btn-primary">Créer</button>
     </form>
   </div>

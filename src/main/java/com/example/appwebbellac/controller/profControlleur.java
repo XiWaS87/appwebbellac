@@ -87,7 +87,6 @@ public class profControlleur {
 
             System.out.println(professeur);
         }
-        System.out.println(accesService.getLastAcces());
         service.saveProf(professeur);
         return new ModelAndView("redirect:/profs");
     }
