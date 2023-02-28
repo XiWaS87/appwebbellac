@@ -60,7 +60,7 @@ public class profControlleur {
     @GetMapping("/updateProf/{id}")
     public String updateProf(@PathVariable("id") final int id, Model model) {
         Professeur p = service.getProf(id);
-        model.addAttribute("eleve", p);
+        model.addAttribute("prof", p);
         return "updateProf";
     }
 
@@ -89,7 +89,7 @@ public class profControlleur {
         }
         System.out.println(accesService.getLastAcces());
         service.saveProf(professeur);
-        return new ModelAndView("redirect:/");
+        return new ModelAndView("redirect:/profs");
     }
 
 }

@@ -25,8 +25,6 @@
         <th>Nom</th>
         <th>mail</th>
         <th>numero de tel</th>
-        <th>Classe</th>
-        <th>Acces</th>
       </tr>
       </thead>
 
@@ -40,8 +38,6 @@
         <td><span th:text="${prof.NOM}"> Nom </span></td>
         <td><span th:text="${prof.MAIL}"> mail </span></td>
         <td><span th:text="${prof.NUMEROTEL}"> numero de tel </span></td>
-        <td><span th:text="${prof.classe}"> Classe </span></td>
-        <td><span th:text="${prof.acces}"> Acces </span></td>
         <td>
           <a th:href="@{/updateProf/{id}(id=${prof.idProf})}"><button class="btn btn-info">Modifier</button></a>
           <a th:href="@{/deleteProf/{id}(id=${prof.idProf})}"><button class="btn btn-danger">Supprimer</button></a>
