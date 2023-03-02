@@ -41,7 +41,7 @@ public class ClasseRepository {
 
     public Classe getClasse(int id) {
         String baseApiUrl = props.getApiUrl();
-        String getClasseUrl = baseApiUrl + "/classes/" + id;
+        String getClasseUrl = baseApiUrl + "/classe/" + id;
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Classe> response = restTemplate.exchange(
@@ -75,7 +75,7 @@ public class ClasseRepository {
 
     public Classe updateClasse(Classe c) {
         String baseApiUrl = props.getApiUrl();
-        String updateClasseUrl = baseApiUrl + "/classes/" + c.getIdCLasse();
+        String updateClasseUrl = baseApiUrl + "/modifClasse/" + c.getIdCLasse();
 
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<Classe> request = new HttpEntity<Classe>(c);
@@ -91,7 +91,7 @@ public class ClasseRepository {
 
     public void deleteClasse(int id) {
         String baseApiUrl = props.getApiUrl();
-        String deleteClasseUrl = baseApiUrl + "/classes/" + id;
+        String deleteClasseUrl = baseApiUrl + "/delClasse/" + id;
 
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Void> response = restTemplate.exchange(

@@ -52,7 +52,7 @@ public class classeController {
     public String updateClasse(@PathVariable("id") final int id, Model model) {
         Classe c = service.getClasse(id);
         model.addAttribute("classe", c);
-        return "";
+        return "updateClasse";
     }
 
     @GetMapping("/deleteClasse/{id}")
